@@ -1,0 +1,15 @@
+version: '2'
+services:
+  ros:
+    image: "leontius/ros:hokuyo_ros"
+    container_name: hokuyo_ros
+    hostname: ros
+    ports:
+      - "1080:5000"
+    volumes:
+      - ./data:/data
+      - ./tmp:/tmp
+    stdin_open: true
+    tty: true
+    devices:
+      - /dev/ttyUSB0:/dev/ttyUSB0
