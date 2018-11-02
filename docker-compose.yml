@@ -3,12 +3,14 @@ services:
   ros:
     image: "leontius/ros:hokuyo_ros"
     container_name: hokuyo_ros
+    restart: always
     ports:
-      - "5000:5000"
+      - "8080:5000"
     volumes:
       - ./data:/data
       - ./tmp:/tmp
-    #stdin_open: true
-    #tty: true
-    #devices:
-    #  - /dev/ttyUSB0:/dev/ttyUSB0
+      - ./hokuyo.launch:/home/spin-hokuyo_ws/src/spin_hokuyo-master/launch/tilt_continuous.launch
+    stdin_open: true
+    tty: true
+    devices:
+      - /dev/ttyUSB0:/dev/ttyUSB0

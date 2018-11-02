@@ -42,11 +42,11 @@ RUN cd /home && \
     cd steak-restful-api && \
     pip install -r requirements.txt
 
+ENV FLASK_CONFIG=prod
+
 # setup entrypoint
 ENV HOKUYO_ENV=spin-hokuyo_ws/devel
 COPY ./hokuyo_entrypoint.sh /hokuyo_entrypoint.sh
-
-ENV FLASK_CONFIG=prod
 
 WORKDIR /home
 ENTRYPOINT ["/hokuyo_entrypoint.sh"]

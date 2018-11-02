@@ -3,8 +3,7 @@ set -e
 
 # setup hokuyo environment
 echo 'source "/home/$HOKUYO_ENV/setup.bash"' >> /root/.bashrc
-source "/opt/ros/kinetic/setup.bash"
-source /root/.bashrc
-nohup roscore &
+source /home/$HOKUYO_ENV/setup.bash
+nohup roslaunch spin_hokuyo tilt_continuous.launch &
 python /home/steak-restful-api/run.py
 exec "$@"
