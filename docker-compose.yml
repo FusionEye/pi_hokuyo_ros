@@ -10,6 +10,7 @@ services:
       - ./data:/data
       - ./tmp:/tmp
       - ./hokuyo.launch:/home/spin-hokuyo_ws/src/spin_hokuyo-master/launch/tilt_continuous.launch
+      - ./dynamixel_servos_tilting.yaml:/home/spin-hokuyo_ws/src/spin_hokuyo-master/launch/dynamixel_servos_tilting.yaml
     stdin_open: true
     tty: true
     devices:
