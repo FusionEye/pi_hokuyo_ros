@@ -3,6 +3,7 @@ services:
   ros:
     image: "leontius/ros:hokuyo_ros"
     container_name: hokuyo_ros
+    hostname: ros
     restart: always
     ports:
       - "8080:5000"
@@ -15,3 +16,19 @@ services:
     tty: true
     devices:
       - /dev/ttyUSB0:/dev/ttyUSB0
+    networks:
+      - eye
+  fusioneye_web:
+    image: "leontius/fusioneye_web:latest"
+    container_name: hokuyo_ros
+    restart: always
+    hostname: fusioneye_web
+    ports:
+      - "9000:80"
+    depends_on:
+      - ros
+    networks:
+      - eye
+networks:
+   eye:
+     driver: fusioneye_net
