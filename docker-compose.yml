@@ -14,8 +14,8 @@ services:
       - ./dynamixel_servos_tilting.yaml:/home/spin-hokuyo_ws/src/spin_hokuyo-master/launch/dynamixel_servos_tilting.yaml
     stdin_open: true
     tty: true
-    #devices:
-    #  - /dev/ttyUSB0:/dev/ttyUSB0
+    devices:
+      - /dev/ttyUSB0:/dev/ttyUSB0
     networks:
       - eye
   fusioneye_web:
