@@ -57,8 +57,8 @@
     output="screen">
 
     <rosparam>
-      min_ang: -2.0071
-      max_ang: 2.0071
+      min_ang: -2.355
+      max_ang: 2.355
     </rosparam>
   </node-->
 
