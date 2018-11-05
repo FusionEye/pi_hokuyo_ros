@@ -57,16 +57,16 @@
     output="screen">
 
     <rosparam>
-      min_ang: -2.355
-      max_ang: 2.355
+      min_ang: -2.0071
+      max_ang: 2.0071
     </rosparam>
   </node-->
 
   <node pkg="urg_node" type="urg_node" name="hokuyo_node" >
     <param name="ip_address" value="192.168.1.10"/>
     <rosparam>
-      min_ang: -2.0071
-      max_ang: 2.0071
+      min_ang: -2.344
+      max_ang: 2.344
     </rosparam>
   </node>
 
