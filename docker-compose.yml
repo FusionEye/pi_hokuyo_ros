@@ -1,7 +1,7 @@
 version: '2.1'
 services:
   ros:
-    image: "leontius/ros:hokuyo:latest"
+    image: "leontius/ros:hokuyo"
     container_name: hokuyo_ros
     hostname: ros
     restart: always
